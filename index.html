@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aayush Balana | BBA Student Portfolio</title>
+<meta name="description" content="Personal portfolio of Aayush Balana, first-year BBA student at JECRC University.">
+<meta name="theme-color" content="#0b0e1a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Sora:wght@500;700;800&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js');</script>
+<style>
+:root{--bg:#0b0e1a;--surface:#131829;--surface2:#1a2036;--line:#262d47;--text:#e9ecf5;--muted:#9aa3bd;--accent:#8c9bff;--gold:#f0c674;--radius:14px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{font-family:"DM Sans",system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--text);line-height:1.7;-webkit-font-smoothing:antialiased}
+h1,h2,h3{font-family:"Sora","DM Sans",system-ui,sans-serif;line-height:1.15;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:6px}
+.container{max-width:1080px;margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+.sec-title{font-size:clamp(1.8rem,4vw,2.5rem);font-weight:800;margin-bottom:12px}
+.sec-sub{color:var(--muted);max-width:34em;margin-bottom:48px}
+
+/* Nav */
+header{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(11,14,26,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:64px}
+.brand{font-family:"Sora",sans-serif;font-weight:800;font-size:1.1rem}
+.brand span{color:var(--accent)}
+.links{display:flex;gap:28px;list-style:none}
+.links a{color:var(--muted);font-size:.95rem;padding:6px 0;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.links a:hover,.links a.active{color:var(--text);border-bottom-color:var(--accent)}
+.burger{display:none;background:none;border:1px solid var(--line);color:var(--text);width:42px;height:42px;border-radius:10px;font-size:1.2rem;cursor:pointer}
+
+/* Hero */
+#home{min-height:100svh;display:flex;align-items:center;padding:120px 0 72px;background:radial-gradient(60% 50% at 80% 20%,rgba(140,155,255,.16),transparent 70%)}
+.hero{display:grid;grid-template-columns:1.3fr .7fr;gap:48px;align-items:center}
+.hello{color:var(--gold);font-weight:500;margin-bottom:14px}
+.hero h1{font-size:clamp(2.6rem,7vw,4.6rem);font-weight:800}
+.role{font-family:"Sora",sans-serif;font-size:clamp(1.1rem,2.6vw,1.6rem);margin:18px 0;color:var(--accent);min-height:2.2em}
+.role::after{content:"";display:inline-block;width:2px;height:1.1em;background:var(--accent);margin-left:4px;vertical-align:-.15em;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.intro{color:var(--muted);max-width:32em;margin-bottom:32px}
+.btns{display:flex;flex-wrap:wrap;gap:14px}
+.btn{display:inline-block;padding:13px 26px;border-radius:999px;font-weight:700;border:1px solid var(--accent);transition:transform .2s,background .2s,color .2s;cursor:pointer;font-family:inherit;font-size:1rem}
+.btn.primary{background:var(--accent);color:#0b0e1a}
+.btn.ghost{color:var(--text)}
+.btn:hover{transform:translateY(-3px)}
+.btn.ghost:hover{background:rgba(140,155,255,.12)}
+.avatar{justify-self:center;width:min(280px,70vw);aspect-ratio:1;border-radius:50%;padding:6px;background:conic-gradient(from 180deg,var(--accent),var(--gold),var(--accent));animation:float 6s ease-in-out infinite}
+.avatar div{width:100%;height:100%;border-radius:50%;background:var(--surface);display:grid;place-items:center;font-family:"Sora",sans-serif;font-size:4.5rem;font-weight:800;overflow:hidden}
+.avatar img{width:100%;height:100%;object-fit:cover}
+@keyframes float{50%{transform:translateY(-12px)}}
+
+/* About */
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:48px}
+.about p{color:var(--muted)}
+.about p+p{margin-top:16px}
+.facts{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:24px;list-style:none}
+.facts li{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line)}
+.facts li:last-child{border:0}
+.facts span:first-child{color:var(--muted)}
+.facts span:last-child{text-align:right;font-weight:500}
+
+/* Education timeline */
+.timeline{position:relative;padding-left:32px;border-left:2px solid var(--line);display:grid;gap:28px}
+.item{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px 24px}
+.item::before{content:"";position:absolute;left:-41px;top:28px;width:16px;height:16px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.item .when{color:var(--gold);font-size:.9rem;font-weight:500}
+.item h3{font-size:1.15rem;margin:4px 0}
+.item p{color:var(--muted)}
+
+/* Skills */
+.skill-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px 48px}
+.skill .row{display:flex;justify-content:space-between;margin-bottom:8px;font-weight:500}
+.skill .row span:last-child{color:var(--muted)}
+.bar{height:8px;background:var(--surface2);border-radius:99px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--accent),var(--gold));transition:width 1.2s cubic-bezier(.2,.7,.2,1)}
+.tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:40px;list-style:none}
+.tags li{border:1px solid var(--line);background:var(--surface);padding:6px 16px;border-radius:99px;font-size:.9rem;color:var(--muted)}
+
+/* Projects */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:flex;flex-direction:column;transition:transform .25s,border-color .25s}
+.card:hover{transform:translateY(-6px);border-color:var(--accent)}
+.card h3{font-size:1.15rem;margin-bottom:10px}
+.card p{color:var(--muted);flex:1}
+.card .tags{margin:18px 0 0}
+.card .tags li{padding:2px 12px;font-size:.8rem}
+.card a{margin-top:18px;color:var(--accent);font-weight:700}
+
+/* Contact */
+.contact{display:grid;grid-template-columns:1fr 1.2fr;gap:48px}
+.contact p{color:var(--muted);margin-bottom:24px}
+.contact-list{list-style:none;display:grid;gap:14px}
+.contact-list a{color:var(--text);border-bottom:1px solid var(--line)}
+.contact-list a:hover{color:var(--accent)}
+form{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;display:grid;gap:16px}
+label{font-size:.9rem;color:var(--muted);display:grid;gap:6px}
+input,textarea{font:inherit;color:var(--text);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px 14px;width:100%}
+input:focus,textarea:focus{outline:none;border-color:var(--accent)}
+textarea{min-height:130px;resize:vertical}
+footer{border-top:1px solid var(--line);padding:28px 0;text-align:center;color:var(--muted);font-size:.9rem}
+
+/* Reveal */
+.js .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
+.js .reveal.in{opacity:1;transform:none}
+
+/* Responsive */
+@media(max-width:860px){
+  .hero,.about,.contact{grid-template-columns:1fr}
+  .avatar{order:-1;width:180px}
+  .avatar div{font-size:3rem}
+  .cards{grid-template-columns:1fr}
+  .skill-grid{grid-template-columns:1fr}
+  .burger{display:block}
+  .links{position:absolute;top:64px;left:0;right:0;flex-direction:column;gap:0;background:var(--bg);border-bottom:1px solid var(--line);max-height:0;overflow:hidden;transition:max-height .3s}
+  .links.open{max-height:360px}
+  .links a{display:block;padding:14px 24px;border:0}
+  section{padding:72px 0}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{animation:none!important;transition:none!important}
+  .js .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a href="#home" class="brand"><span data-cfg="firstName">Aayush</span><span>.</span></a>
+    <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">&#9776;</button>
+    <ul class="links" id="links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+<section id="home">
+  <div class="container hero">
+    <div>
+      <p class="hello">Hello, I'm</p>
+      <h1 data-cfg="name">Aayush Balana</h1>
+      <p class="role" id="role" aria-live="off"></p>
+      <p class="intro" data-cfg="intro">First-year BBA student who enjoys business, people and new ideas. I'm building my skills one project at a time.</p>
+      <div class="btns">
+        <a href="#projects" class="btn primary">View my work</a>
+        <a href="#contact" class="btn ghost">Get in touch</a>
+      </div>
+    </div>
+    <div class="avatar" aria-label="Profile photo">
+      <!-- To use a photo: replace the div below with <img src="photo.jpg" alt="Your name"> -->
+      <div id="initials">AB</div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <h2 class="sec-title reveal">About me</h2>
+    <p class="sec-sub reveal">A little about who I am and where I'm heading.</p>
+    <div class="about">
+      <div class="reveal">
+        <p data-cfg="about1">I'm a BBA student at JECRC University. I'm curious about how businesses work, from marketing and finance to management and communication.</p>
+        <p data-cfg="about2">Outside classes I like learning new tools, working in teams and taking part in college activities. My goal is to build a career in business and grow into a confident leader.</p>
+      </div>
+      <ul class="facts reveal">
+        <li><span>Name</span><span data-cfg="name">Aayush Balana</span></li>
+        <li><span>Studying</span><span>BBA, 1st year</span></li>
+        <li><span>University</span><span data-cfg="university">JECRC University</span></li>
+        <li><span>Location</span><span data-cfg="location">Jaipur, India</span></li>
+        <li><span>Interests</span><span data-cfg="interests">Business, Technology</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="container">
+    <h2 class="sec-title reveal">Education</h2>
+    <p class="sec-sub reveal">My academic journey so far.</p>
+    <div class="timeline">
+      <div class="item reveal">
+        <span class="when">2026 – Present</span>
+        <h3>Bachelor of Business Administration (BBA)</h3>
+        <p>JECRC University, 1st year. Subjects include Principles of Management, Managerial Economics, Accounting for Managers, OD and Communication Skills.</p>
+      </div>
+      <div class="item reveal">
+        <span class="when">20XX – 20XX</span>
+        <h3>Senior Secondary (Class 12)</h3>
+        <p>Your school name, board and stream. Add your percentage if you like.</p>
+      </div>
+      <div class="item reveal">
+        <span class="when">20XX – 20XX</span>
+        <h3>Secondary (Class 10)</h3>
+        <p>Your school name and board.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="container">
+    <h2 class="sec-title reveal">Skills</h2>
+    <p class="sec-sub reveal">What I'm good at and what I'm still improving. Edit the percentages in the HTML (data-level).</p>
+    <div class="skill-grid">
+      <div class="skill reveal"><div class="row"><span>Communication</span><span>85%</span></div><div class="bar"><i data-level="85"></i></div></div>
+      <div class="skill reveal"><div class="row"><span>Teamwork</span><span>90%</span></div><div class="bar"><i data-level="90"></i></div></div>
+      <div class="skill reveal"><div class="row"><span>MS Office &amp; Excel</span><span>75%</span></div><div class="bar"><i data-level="75"></i></div></div>
+      <div class="skill reveal"><div class="row"><span>Presentation</span><span>75%</span></div><div class="bar"><i data-level="75"></i></div></div>
+      <div class="skill reveal"><div class="row"><span>Basic Accounting</span><span>70%</span></div><div class="bar"><i data-level="70"></i></div></div>
+      <div class="skill reveal"><div class="row"><span>Time Management</span><span>80%</span></div><div class="bar"><i data-level="80"></i></div></div>
+    </div>
+    <ul class="tags reveal">
+      <li>Leadership</li><li>Problem Solving</li><li>Public Speaking</li><li>Digital Literacy</li><li>Hindi</li><li>English</li>
+    </ul>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="container">
+    <h2 class="sec-title reveal">Projects</h2>
+    <p class="sec-sub reveal">Replace these samples with your own college work and personal projects.</p>
+    <div class="cards">
+      <article class="card reveal">
+        <h3>Market Survey Report</h3>
+        <p>A small survey on student spending habits, with findings presented in charts and a short report.</p>
+        <ul class="tags"><li>Research</li><li>Excel</li></ul>
+        <a href="#">View project</a>
+      </article>
+      <article class="card reveal">
+        <h3>Business Plan Case Study</h3>
+        <p>A mini business plan for a campus startup idea covering the target market, costs and pricing.</p>
+        <ul class="tags"><li>Management</li><li>Finance</li></ul>
+        <a href="#">View project</a>
+      </article>
+      <article class="card reveal">
+        <h3>Personal Portfolio Website</h3>
+        <p>This website, built with HTML, CSS and JavaScript and deployed on Vercel.</p>
+        <ul class="tags"><li>HTML</li><li>CSS</li><li>JS</li></ul>
+        <a href="#">View project</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="container">
+    <h2 class="sec-title reveal">Contact</h2>
+    <p class="sec-sub reveal">Open to internships, collaborations and good conversations.</p>
+    <div class="contact">
+      <div class="reveal">
+        <p>Send me a message and it will open in your email app. You can also reach me here:</p>
+        <ul class="contact-list">
+          <li>Email: <a data-cfg-mail="email" data-cfg="email" href="#">aayush.26bban1424@jecrcu.edu.in</a></li>
+          <li>LinkedIn: <a data-cfg-link="linkedin" href="#" target="_blank" rel="noopener">linkedin.com/in/yourname</a></li>
+          <li>GitHub: <a data-cfg-link="github" href="#" target="_blank" rel="noopener">github.com/yourname</a></li>
+          <li>Instagram: <a data-cfg-link="instagram" href="#" target="_blank" rel="noopener">instagram.com/yourname</a></li>
+        </ul>
+      </div>
+      <form id="form" class="reveal">
+        <label>Your name<input name="n" required autocomplete="name"></label>
+        <label>Your email<input name="e" type="email" required autocomplete="email"></label>
+        <label>Message<textarea name="m" required></textarea></label>
+        <button class="btn primary" type="submit">Send message</button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>&copy; <span id="year"></span> <span data-cfg="name">Aayush Balana</span>. All rights reserved.</footer>
+
+<script>
+/* ====== EDIT YOUR DETAILS HERE ====== */
+const CONFIG = {
+  name: "Aayush Balana",
+  firstName: "Aayush",
+  roles: ["BBA Student", "Aspiring Business Leader", "Curious Learner"],
+  email: "aayush.26bban1424@jecrcu.edu.in",
+  linkedin: "https://www.linkedin.com/in/yourname",
+  github: "https://github.com/yourname",
+  instagram: "https://www.instagram.com/yourname"
+};
+/* ===================================== */
+
+// Fill in text from CONFIG
+document.querySelectorAll("[data-cfg]").forEach(el => {
+  const v = CONFIG[el.dataset.cfg];
+  if (v) el.textContent = v;
+});
+document.querySelectorAll("[data-cfg-link]").forEach(el => {
+  const url = CONFIG[el.dataset.cfgLink];
+  el.href = url;
+  el.textContent = url.replace(/^https?:\/\/(www\.)?/, "");
+});
+document.querySelectorAll("[data-cfg-mail]").forEach(el => el.href = "mailto:" + CONFIG.email);
+document.getElementById("initials").textContent = CONFIG.name.split(" ").map(w => w[0]).join("").slice(0, 2).toUpperCase();
+document.getElementById("year").textContent = new Date().getFullYear();
+
+// Typing effect
+const roleEl = document.getElementById("role");
+const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+if (reduce) {
+  roleEl.textContent = CONFIG.roles[0];
+} else {
+  let r = 0, c = 0, del = false;
+  (function type() {
+    const word = CONFIG.roles[r];
+    roleEl.textContent = word.slice(0, c);
+    if (!del && c === word.length) { del = true; return setTimeout(type, 1400); }
+    if (del && c === 0) { del = false; r = (r + 1) % CONFIG.roles.length; }
+    c += del ? -1 : 1;
+    setTimeout(type, del ? 45 : 90);
+  })();
+}
+
+// Mobile menu
+const burger = document.getElementById("burger"), links = document.getElementById("links");
+burger.addEventListener("click", () => {
+  const open = links.classList.toggle("open");
+  burger.setAttribute("aria-expanded", open);
+});
+links.addEventListener("click", e => { if (e.target.tagName === "A") { links.classList.remove("open"); burger.setAttribute("aria-expanded", false); } });
+
+// Reveal on scroll + skill bars
+const io = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (!en.isIntersecting) return;
+    en.target.classList.add("in");
+    const bar = en.target.querySelector("[data-level]");
+    if (bar) bar.style.width = bar.dataset.level + "%";
+    io.unobserve(en.target);
+  });
+}, { threshold: .15 });
+document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
+// Highlight current section in nav
+const navLinks = [...links.querySelectorAll("a")];
+const spy = new IntersectionObserver(entries => {
+  entries.forEach(en => {
+    if (en.isIntersecting) navLinks.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + en.target.id));
+  });
+}, { rootMargin: "-45% 0px -50% 0px" });
+document.querySelectorAll("main section").forEach(s => spy.observe(s));
+
+// Contact form opens the visitor's email app (no backend needed)
+document.getElementById("form").addEventListener("submit", e => {
+  e.preventDefault();
+  const f = new FormData(e.target);
+  const body = `${f.get("m")}\n\nFrom: ${f.get("n")} (${f.get("e")})`;
+  location.href = `mailto:${CONFIG.email}?subject=${encodeURIComponent("Portfolio message from " + f.get("n"))}&body=${encodeURIComponent(body)}`;
+});
+</script>
+</body>
+</html>
